@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AquaWatch AI | Marine Debris Intelligence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-mark">≈</div>
+      <div><strong>AquaWatch<span> AI</span></strong><small>OCEAN INTELLIGENCE</small></div>
+    </div>
+    <div class="workspace-label">WORKSPACE</div>
+    <nav>
+      <button class="nav-link active" data-target="overview"><span>▦</span> Overview</button>
+      <button class="nav-link" data-target="analyze"><span>⌕</span> Analyze image</button>
+      <button class="nav-link" data-target="hotspots"><span>◎</span> Hotspot map</button>
+      <button class="nav-link" data-target="reports"><span>▤</span> Reports</button>
+    </nav>
+    <div class="sidebar-bottom">
+      <div class="status-card"><div class="status-dot"></div><div><b>Prototype mode</b><small>Demo data enabled</small></div></div>
+      <div class="team-chip"><div class="avatar">AS</div><div><b>AquaSentinels</b><small>Hackathon workspace</small></div></div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div><div class="eyebrow">MARINE DEBRIS MONITORING</div><h1 id="page-title">Overview</h1></div>
+      <div class="top-actions"><span class="live-pill"><i></i> DEMO ENVIRONMENT</span><div class="profile">AS</div></div>
+    </header>
+
+    <section class="page active" id="overview">
+      <div class="hero">
+        <div class="hero-copy">
+          <div class="hero-tag">AI-POWERED COASTAL INTELLIGENCE</div>
+          <h2>See the problem.<br><em>Prioritize the response.</em></h2>
+          <p>Turn marine litter observations into clear, location-aware cleanup priorities.</p>
+          <button class="primary-btn" data-go="analyze">＋ Analyze an image <span>→</span></button>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+          <div class="globe"><div class="globe-line"></div><div class="globe-line second"></div><div class="globe-shine"></div></div>
+          <div class="float-tag tag-a">AI DETECTION <b>● ACTIVE</b></div>
+          <div class="float-tag tag-b">POLLUTION INDEX <b>72 / 100</b></div>
+        </div>
+      </div>
+
+      <div class="section-heading"><div><div class="eyebrow">FIELD SNAPSHOT</div><h3>Monitoring at a glance</h3></div><span class="muted">Illustrative sample observations</span></div>
+      <div class="metrics">
+        <article class="metric"><div class="metric-top"><span>OBSERVATIONS</span><span class="metric-icon">▧</span></div><strong id="metric-observations">24</strong><small><b class="positive">+4</b> this week</small></article>
+        <article class="metric"><div class="metric-top"><span>ITEMS DETECTED</span><span class="metric-icon">⌗</span></div><strong id="metric-items">186</strong><small>Across demo observations</small></article>
+        <article class="metric"><div class="metric-top"><span>HIGH PRIORITY</span><span class="metric-icon orange">!</span></div><strong id="metric-high">6</strong><small>Require field review</small></article>
+        <article class="metric"><div class="metric-top"><span>LOCATIONS MAPPED</span><span class="metric-icon">◎</span></div><strong id="metric-locations">8</strong><small>Demo locations</small></article>
+      </div>
+
+      <div class="content-grid">
+        <article class="panel trend-panel">
+          <div class="panel-head"><div><h3>Observation activity</h3><p>Sample records over the last 7 days</p></div><span class="tiny-select">LAST 7 DAYS⌄</span></div>
+          <div class="chart" aria-label="Observation activity bar chart">
+            <div class="y-labels"><span>12</span><span>8</span><span>4</span><span>0</span></div>
+            <div class="bars">
+              <div class="bar-col"><div class="bar" style="height:36%"></div><small>Mon</small></div>
+              <div class="bar-col"><div class="bar" style="height:55%"></div><small>Tue</small></div>
+              <div class="bar-col"><div class="bar" style="height:43%"></div><small>Wed</small></div>
+              <div class="bar-col"><div class="bar" style="height:76%"></div><small>Thu</small></div>
+              <div class="bar-col"><div class="bar" style="height:62%"></div><small>Fri</small></div>
+              <div class="bar-col"><div class="bar" style="height:92%"></div><small>Sat</small></div>
+              <div class="bar-col"><div class="bar" style="height:68%"></div><small>Sun</small></div>
+            </div>
+          </div>
+        </article>
+        <article class="panel priority-panel">
+          <div class="panel-head"><div><h3>Priority distribution</h3><p>Based on sample scoring</p></div></div>
+          <div class="donut-wrap"><div class="donut"><div><b>24</b><small>records</small></div></div><div class="legend"><div><i class="high"></i><span>High</span><b>6</b></div><div><i class="medium"></i><span>Medium</span><b>11</b></div><div><i class="low"></i><span>Low</span><b>7</b></div></div></div>
+        </article>
+      </div>
+
+      <div class="section-heading"><div><div class="eyebrow">RECENT ACTIVITY</div><h3>Priority observations</h3></div><button class="text-btn" data-go="hotspots">View all locations →</button></div>
+      <div class="panel table-panel">
+        <table><thead><tr><th>LOCATION</th><th>OBSERVATION</th><th>ITEMS</th><th>PRIORITY</th><th>STATUS</th></tr></thead>
+        <tbody id="recent-table">
+          <tr><td><b>Marina Beach</b><small>Chennai, India</small></td><td>Floating plastic</td><td>38</td><td><span class="priority high-p">High · 86</span></td><td><span class="status review">Needs review</span></td></tr>
+          <tr><td><b>Puri Coast</b><small>Odisha, India</small></td><td>Mixed debris</td><td>24</td><td><span class="priority med-p">Medium · 64</span></td><td><span class="status pending">Pending</span></td></tr>
+          <tr><td><b>Versova Beach</b><small>Mumbai, India</small></td><td>Plastic bottles</td><td>17</td><td><span class="priority low-p">Low · 31</span></td><td><span class="status done">Reviewed</span></td></tr>
+        </tbody></table>
+      </div>
+      <div class="disclaimer">Demo dashboard · All figures and sample locations shown here are illustrative, not live environmental measurements.</div>
+    </section>
+
+    <section class="page" id="analyze">
+      <div class="page-intro"><div><div class="eyebrow">COMPUTER VISION WORKFLOW</div><h2>Analyze a water-surface image</h2><p>Upload a photo to preview it, then run the guided prototype analysis.</p></div><span class="step-chip">01 / IMAGE INPUT</span></div>
+      <div class="analysis-layout">
+        <div class="panel upload-panel">
+          <div class="panel-head"><div><h3>Image input</h3><p>JPG, PNG or WEBP · Max 10 MB</p></div><span class="upload-icon">↥</span></div>
+          <label class="dropzone" id="dropzone" for="image-input">
+            <input type="file" id="image-input" accept="image/png,image/jpeg,image/webp" hidden>
+            <div class="upload-symbol">↑</div><b>Drop your image here</b><span>or <u>browse files</u></span><small>For best results, use a clear water-surface or coastal image.</small>
+          </label>
+          <div class="preview-wrap hidden" id="preview-wrap"><img id="preview-image" alt="Uploaded image preview"><div class="preview-caption"><span id="file-name">image.jpg</span><button class="remove-btn" id="remove-image">Remove</button></div></div>
+          <div class="input-fields">
+            <label>Observation location <span>Optional</span><input id="location-input" placeholder="e.g. Puri Beach, Odisha"></label>
+            <label>Observation notes <span>Optional</span><textarea id="notes-input" rows="2" placeholder="Add context for the field team..."></textarea></label>
+          </div>
+          <button class="primary-btn full" id="analyze-btn" disabled>Run prototype analysis <span>→</span></button>
+          <p class="micro-note">This presentation build uses clearly labelled sample analysis output. A trained YOLO model/API must be connected for real object detection.</p>
+        </div>
+        <div class="panel guide-panel">
+          <div class="eyebrow">HOW IT WORKS</div><h3>From observation to action</h3>
+          <div class="workflow">
+            <div class="workflow-item"><div class="workflow-num">1</div><div><b>Image input</b><p>Upload a coastal or water-surface image.</p></div></div>
+            <div class="workflow-item"><div class="workflow-num">2</div><div><b>AI detection layer</b><p>Planned YOLO model identifies visible debris classes.</p></div></div>
+            <div class="workflow-item"><div class="workflow-num">3</div><div><b>Severity estimation</b><p>Combine debris count, confidence and site context.</p></div></div>
+            <div class="workflow-item"><div class="workflow-num">4</div><div><b>Human review</b><p>Field teams verify findings before action.</p></div></div>
+          </div>
+          <div class="callout"><b>Responsible AI</b><p>A single image cannot measure total ocean pollution. Results are decision-support estimates and need human validation.</p></div>
+        </div>
+      </div>
+      <div class="panel results-panel hidden" id="results-panel">
+        <div class="panel-head"><div><div class="eyebrow">PROTOTYPE OUTPUT</div><h3>Observation analysis</h3></div><span class="demo-label">SIMULATED DEMO RESULT</span></div>
+        <div class="results-grid">
+          <div class="result-image"><img id="result-image" alt="Analyzed uploaded image"><div class="image-overlay-label">IMAGE PREVIEW · NOT AI ANNOTATED</div></div>
+          <div class="result-summary">
+            <div class="score-row"><div><small>POLLUTION PRIORITY SCORE</small><div class="score-number" id="score-number">72<span>/100</span></div></div><span class="priority high-p" id="score-band">High priority</span></div>
+            <div class="score-track"><div id="score-fill"></div></div>
+            <div class="result-stats"><div><small>DEMO DEBRIS COUNT</small><b id="debris-count">32</b></div><div><small>REVIEW CONFIDENCE</small><b id="confidence">91%</b></div><div><small>RECOMMENDED ACTION</small><b id="action-text">Field review</b></div></div>
+            <p class="result-explain" id="result-explain">This is a simulated example to demonstrate the workflow. No actual AI model has processed the uploaded image.</p>
+            <button class="secondary-btn" id="save-observation">＋ Save observation to dashboard</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page" id="hotspots">
+      <div class="page-intro"><div><div class="eyebrow">GEOSPATIAL VIEW</div><h2>Potential pollution hotspots</h2><p>Explore illustrative sample observations and their cleanup priority.</p></div><span class="step-chip">02 / LOCATION VIEW</span></div>
+      <div class="map-layout">
+        <div class="map-canvas">
+          <div class="map-grid"></div><div class="land land-one"></div><div class="land land-two"></div><div class="land land-three"></div>
+          <div class="water-label">BAY OF BENGAL</div>
+          <div class="map-point p1" data-place="Puri Coast" data-score="86"><span></span><b>86</b></div>
+          <div class="map-point p2" data-place="Marina Beach" data-score="72"><span></span><b>72</b></div>
+          <div class="map-point p3" data-place="Digha Coast" data-score="48"><span></span><b>48</b></div>
+          <div class="map-point p4" data-place="Paradip Coast" data-score="63"><span></span><b>63</b></div>
+          <div class="map-legend"><span><i class="high"></i> High</span><span><i class="medium"></i> Medium</span><span><i class="low"></i> Low</span></div>
+          <div class="map-caption">ILLUSTRATIVE MAP · NOT GPS-ACCURATE</div>
+        </div>
+        <div class="panel hotspot-list"><div class="panel-head"><div><h3>Priority locations</h3><p>Select a location marker to inspect</p></div></div><div id="hotspot-details"><div class="hotspot-entry selected"><div class="rank">01</div><div><b>Puri Coast</b><small>Odisha, India · Sample location</small></div><strong class="score-high">86</strong></div><div class="hotspot-entry"><div class="rank">02</div><div><b>Marina Beach</b><small>Chennai, India · Sample location</small></div><strong class="score-high">72</strong></div><div class="hotspot-entry"><div class="rank">03</div><div><b>Paradip Coast</b><small>Odisha, India · Sample location</small></div><strong class="score-med">63</strong></div><div class="hotspot-entry"><div class="rank">04</div><div><b>Digha Coast</b><small>West Bengal, India · Sample location</small></div><strong class="score-low">48</strong></div></div><div class="callout"><b>Priority logic</b><p>Scores are illustrative and should be calibrated with field data before operational use.</p></div></div>
+      </div>
+    </section>
+
+    <section class="page" id="reports">
+      <div class="page-intro"><div><div class="eyebrow">FIELD DOCUMENTATION</div><h2>Observation reports</h2><p>Export a summary of the sample observations for review.</p></div><span class="step-chip">03 / REPORTING</span></div>
+      <div class="report-banner"><div><div class="eyebrow">AQUAWATCH AI · FIELD SUMMARY</div><h2>Make every observation actionable.</h2><p>Generate a simple report that can be shared with a cleanup team.</p></div><div class="report-art">▤</div></div>
+      <div class="panel report-panel"><div class="panel-head"><div><h3>Report contents</h3><p>Current dashboard data</p></div><button class="primary-btn small" id="download-report">↓ Download CSV</button></div><div class="report-items"><div><span>01</span><b>Observation location and notes</b></div><div><span>02</span><b>Estimated debris count and priority score</b></div><div><span>03</span><b>Suggested next action for human review</b></div><div><span>04</span><b>Prototype disclaimer and validation status</b></div></div></div>
+    </section>
+    <footer>© 2026 AquaSentinels · AquaWatch AI <span>Built as a hackathon prototype</span></footer>
+  </main>
+</div>
+<div class="toast" id="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>
